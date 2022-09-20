@@ -11,7 +11,6 @@
 
 - [Dependencies](#dependencies)
 - [Install](#install)
-- [License](#license)
 
 # Dependencies
 
