@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -o nounset -o pipefail -o errexit
+IFS=$'\t\n'
+
+asdf_ecsk_fail() {
+  echo >&2 "⛔ $*"
+  exit 1
+}
+
+asdf_ecsk_uninstall() {
+  rm -fR "${ASDF_INSTALL_PATH}"
+}
+
+[ -z "${ASDF_INSTALL_PATH}" ] && asdf_ecsk_fail "No installation directory was provided. Are you running this command via asdf? Try running 'asdf uninstall ecsk <version>'"
+
+asdf_ecsk_uninstall "$@"
