@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-GH_REPO="https://github.com/t1732/ecsk"
+GH_REPO="https://github.com/yukiarrr/ecsk"
 TOOL_NAME="ecsk"
 TOOL_TEST="ecsk -h"
 
@@ -57,7 +57,7 @@ install_version() {
 
     echo "build $TOOL_NAME $version..."
     go mod tidy
-    CGO_ENABLED=0 GO111MODULE=on go build -ldflags '-s -w -X github.com/t1732/ecsk/pkg/cmd.Version=v${version}' -o "$install_path/ecsk" cmd/ecsk/main.go
+    CGO_ENABLED=0 GO111MODULE=on go build -ldflags '-s -w -X github.com/yukiarrr/ecsk/pkg/cmd.Version=v${version}' -o "$install_path/ecsk" cmd/ecsk/main.go
 
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
